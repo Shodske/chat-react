@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html, body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.chat-app {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.nav {
+    min-width: 20rem;
+    flex-basis: 20%;
+}
+
+.support, .users {
+    height: 50vh;
+    margin-bottom: 0;
+}
+
+.channels, .users, .messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.channels, .users {
+    height: 88%;
+}
+
+.channels > ul, .messages > ul, .users > ul {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.channels.panel-body::before, .channels.panel-body::after {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.messages-container {
+    flex-basis: 80%;
+    margin-bottom: 0;
+    height: 100vh;
+}
+
+.messages {
+    height: 94%;
+}
+
+.message {
+    /*display: flex;*/
+}
+
+.message > .author {
+    flex-basis: 100%;
+}
+
+.message > .body {
+    flex-basis: 100%;
+}
+
+.timestamp {
+    color: #808080;
+    font-style: italic;
+    padding-left: 10px;
+    font-size: 13px;
+}
+
