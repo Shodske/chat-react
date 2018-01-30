@@ -7,7 +7,7 @@ class UserForm extends React.Component {
 
   onSubmit (e) {
     e.preventDefault()
-    this.props.setCurrentUser(this.node.value)
+    this.props.setUserName(this.node.value)
     this.node.value = ''
   }
 
@@ -23,7 +23,7 @@ class UserForm extends React.Component {
 }
 
 UserForm.propTypes = {
-  setCurrentUser: PropTypes.func.isRequired
+  setUserName: PropTypes.func.isRequired
 }
 
 export default UserForm

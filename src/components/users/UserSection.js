@@ -14,7 +14,7 @@ class UserSection extends React.Component {
         </Panel.Heading>
         <Panel.Body className='users'>
           <UserList users={this.props.users}/>
-          <UserForm setCurrentUser={this.props.setCurrentUser}/>
+          <UserForm setUserName={this.props.setUserName}/>
         </Panel.Body>
       </Panel>
     )
@@ -23,7 +23,7 @@ class UserSection extends React.Component {
 
 UserSection.propTypes = {
   users: PropTypes.array.isRequired,
-  setCurrentUser: PropTypes.func.isRequired
+  setUserName: PropTypes.func.isRequired
 }
 
 export default UserSection

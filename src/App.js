@@ -15,15 +15,14 @@ class App extends React.Component {
     this.state = {
       channels: [],
       activeChannel: {},
-      users: [{id: 0, name: 'Anonymous'}],
+      users: [],
       messages: [],
-      currentUser: {id: 0, name: 'Anonymous'},
       connected: false
     }
   }
 
   componentDidMount () {
-    this.socket = new Socket()
+    this.socket = new Socket(new WebSocket('ws://localhost:4000'))
     this.socket.on('connect', this.onConnect.bind(this))
     this.socket.on('disconnect', this.onDisconnect.bind(this))
     this.socket.on('channel.add', this.onAddChannel.bind(this))
@@ -91,11 +90,6 @@ class App extends React.Component {
     this.socket.emit('user.edit', {name})
   }
 
-  setCurrentUser (name) {
-    // TODO: remove this function?
-    this.socket.emit('user.edit', {id: 0, name})
-  }
-
   addMessage (body) {
     let {activeChannel} = this.state
     this.socket.emit('message.add', {channelId: activeChannel.id, body})
@@ -107,7 +101,7 @@ class App extends React.Component {
         <Nav>
           <ChannelSection channels={this.state.channels} setChannel={this.setChannel.bind(this)}
                           addChannel={this.addChannel.bind(this)} activeChannel={this.state.activeChannel}/>
-          <UserSection users={this.state.users} setCurrentUser={this.setCurrentUser.bind(this)}/>
+          <UserSection users={this.state.users} setUserName={this.setUserName.bind(this)}/>
         </Nav>
         <MessageSection addMessage={this.addMessage.bind(this)} messages={this.state.messages} channel={this.state.activeChannel}/>
       </div>
