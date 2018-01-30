@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  node:
+    image: node:9
+    working_dir: /opt/chat-react
+    volumes:
+      - .:/opt/chat-react
+    command: yarn start
+    ports:
+      - "3000:3000"
