@@ -10,7 +10,7 @@ class UserList extends React.Component {
       <ListGroup>{
         this.props.users.map(user => {
           return (
-            <User key={user.id} user={user} currentUser={this.props.currentUser}/>
+            <User key={user.id} user={user}/>
           )
         })
       }</ListGroup>
@@ -19,8 +19,7 @@ class UserList extends React.Component {
 }
 
 UserList.propTypes = {
-  users: PropTypes.array.isRequired,
-  currentUser: PropTypes.object.isRequired
+  users: PropTypes.array.isRequired
 }
 
 export default UserList

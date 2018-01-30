@@ -23,7 +23,7 @@ class MessageSection extends React.Component {
           <Panel.Title>{this.props.channel.name}</Panel.Title>
         </Panel.Heading>
         <Panel.Body className='messages'>
-          <MessageList messages={this.props.channel.messages}/>
+          <MessageList messages={this.props.messages}/>
           <MessageForm addMessage={this.props.addMessage}/>
         </Panel.Body>
       </Panel>
@@ -33,6 +33,7 @@ class MessageSection extends React.Component {
 
 MessageSection.propTypes = {
   channel: PropTypes.object.isRequired,
+  messages: PropTypes.array.isRequired,
   addMessage: PropTypes.func.isRequired
 }
 

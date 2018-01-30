@@ -5,9 +5,9 @@ import { ListGroupItem } from 'react-bootstrap'
 class User extends React.Component {
 
   render () {
-    const {user, currentUser} = this.props
+    const {user} = this.props
     return (
-      <ListGroupItem active={user === currentUser}>
+      <ListGroupItem>
         {user.name}
       </ListGroupItem>
     )
@@ -15,8 +15,7 @@ class User extends React.Component {
 }
 
 User.propTypes = {
-  user: PropTypes.object.isRequired,
-  currentUser: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired
 }
 
 export default User
