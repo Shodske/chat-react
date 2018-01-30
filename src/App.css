@@ -37,7 +37,12 @@ html, body {
     overflow-y: auto;
 }
 
-.channels.panel-body::before, .channels.panel-body::after {
+.channels.panel-body::before,
+.channels.panel-body::after,
+.messages.panel-body::before,
+.messages.panel-body::after,
+.users.panel-body::before,
+.users.panel-body::after {
     display: none;
 }
 
@@ -53,18 +58,6 @@ html, body {
 
 .messages {
     height: 94%;
-}
-
-.message {
-    /*display: flex;*/
-}
-
-.message > .author {
-    flex-basis: 100%;
-}
-
-.message > .body {
-    flex-basis: 100%;
 }
 
 .timestamp {
